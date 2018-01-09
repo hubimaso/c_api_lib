@@ -96,7 +96,7 @@ int32_t api_inside_mempool_obj_free(IN void * pool_ptr, IN void * obj);
 ** 函数版本: 1.0
 ** 注意使用: 无
 *****************************************************************/
-int32_t api_inside_mempool_state_count(IN void * pool_ptr, int32_t * used_num, int32_t * free_num);
+int32_t api_inside_mempool_state_count(IN void * pool_ptr, OUT int32_t * used_num, OUT int32_t * free_num);
 
 #ifdef __cplusplus 	
 }

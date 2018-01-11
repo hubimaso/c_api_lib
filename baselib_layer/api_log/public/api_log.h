@@ -51,7 +51,7 @@ typedef enum
 ** 函数版本: 1.0
 ** 注意使用:  不需要存放日志 则log_dir == NULL
 *****************************************************************/
-int32_t api_log_init(const char * mod_name, const char * log_dir);
+int32_t api_log_init(IN const char * mod_name, IN const char * log_dir);
 
 /*****************************************************************
 ** 函数名称: api_log_uninit*

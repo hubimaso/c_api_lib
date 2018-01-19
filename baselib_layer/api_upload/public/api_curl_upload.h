@@ -181,8 +181,8 @@ typedef struct _st_upload_serinfo
 {
     uint8_t     upload_type;                     // (IN)upload 方式 (FTP/SFTP)
     uint8_t     thread_num;                      // (IN)线程个数
-    uint8_t     thread_id;                       // (IN)当前线程ID
-    uint8_t     server_id;                       // (IN)当前severID
+    uint8_t     thread_id;                       // (IN)当前线程ID,多线程场景使用
+    uint8_t     server_id;                       // (IN)当前severID,负载分发场景使用
     char        serv_addr[MAX_UPLOAD_IP_LEN];    // (IN)upload 服务器地址
     uint16_t    serv_port;                       // (IN)upload 服务器端口
     char        username[MAX_UPLOAD_STR_LEN];    // (IN)upload 用户名
@@ -217,7 +217,7 @@ int32_t api_upload_init(IN upload_serinfo_t *upload_serinfo);
 ** 出参列表:
 **      --   无
 ** 返回类型:
-        --   int32_t (0 成功 非0 失败)
+        --   int32_t 返回错误码
 ** 函数版本: 1.0
 ** 注意使用: 无
 *****************************************************************/
@@ -228,6 +228,7 @@ int32_t api_upload_put(IN upload_serinfo_t *upload_serinfo, IN upload_fileinfo_t
 ** 函数说明: // upload 连接状态检查
 ** 入参列表:
 **       --  upload_serinfo: upload 服务配置节点信息
+**       --  tmp_path: 检查的文件或目录
 ** 出参列表:
 **      --   无
 ** 返回类型:
@@ -235,7 +236,7 @@ int32_t api_upload_put(IN upload_serinfo_t *upload_serinfo, IN upload_fileinfo_t
 ** 函数版本: 1.0
 ** 注意使用: 无
 *****************************************************************/
-int32_t api_upload_conncheck(IN upload_serinfo_t *upload_serinfo);
+int32_t api_upload_conncheck(IN upload_serinfo_t *upload_serinfo, IN char * tmp_path);
 
 
 /*****************************************************************

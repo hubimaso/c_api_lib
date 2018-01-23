@@ -172,6 +172,7 @@ typedef struct _st_upload_fileinfo
     char        local_filepath[MAX_UPLOAD_URL_LEN];  // (IN)upload 本地文件名称
     char        remote_filedir[MAX_UPLOAD_URL_LEN];  // (IN)upload 服务器文件目录
     char        remote_filename[MAX_UPLOAD_URL_LEN]; // (IN)upload 服务器文件名称
+    char        local_suffix[MAX_UPLOAD_SUFFIX_LEN];//  (IN)upload 本地文件后缀    
     char        remote_suffix[MAX_UPLOAD_SUFFIX_LEN];// (IN)upload 服务器备份文件后缀
     uint8_t     send_sernum;           // (OUT)一份多发场景下，发送给多个服务器个数统计
 }upload_fileinfo_t;

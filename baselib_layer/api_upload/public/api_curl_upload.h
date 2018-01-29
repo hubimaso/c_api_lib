@@ -191,6 +191,7 @@ typedef struct _st_upload_serinfo
     char        serv_url[MAX_UPLOAD_URL_LEN];    // (OUT)upload url
     void       *handler[MAX_UPLOAD_THREAD_NUM];  // (OUT)upload 句柄
     char        conn_stat;                       // (OUT)服务器连接是否可用 可用:1, 不可用:0
+	uint64_t    upload_size;                     // (OUT)上传文件大小 bytes
 }upload_serinfo_t;
 
 
